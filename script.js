@@ -40,7 +40,7 @@ function showValues()
     let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]")
     let list = document.getElementById('list-item')
     list.innerHTML = ''
-    for(let i = 0; 1 < values.length; i++)
+    for(let i = 0; i < values.length; i++)
     {
         list.innerHTML += `<li>${values[i]['name']}<button id='btn-del' onclick='removeItem("${values[i]['name']}")'><i class="ph ph-x"></i></button></li>`
     }
