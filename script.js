@@ -6,7 +6,6 @@ function validateIfExistNewTask()
     let inputValue = document.getElementById('input-text').value
     let exists = values.find(x => x.name == inputValue)
     return !exists ? false : true
-
 }
 
 function newTask()
@@ -30,29 +29,40 @@ function newTask()
             name: input.value
         })
         localStorage.setItem(localStorageKey, JSON.stringify(values))
-        showValues()
-    }
-    input.value = ""
-}
+        let list = document.getElementById('list-item')
 
-function showValues()
-{
-    let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]")
-    let list = document.getElementById('list-item')
-    list.innerHTML = ''
-    for(let i = 0; 1 < values.length; i++)
-    {
-        list.innerHTML += `<li>${values[i]['name']}<button id='btn-del' onclick='removeItem("${values[i]['name']}")'><i class="ph ph-x"></i></button></li>`
+        list.innerHTML += `<li>
+        ${input.value}<button id='btn-del' onclick='removeItem("${input.value}")'>
+        <i class="ph ph-check"></i>
+        </button></li>`
     }
+    input.value = ""   
 }
+showValues()
 
 function removeItem(data)
 {
     let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]")
     let index = values.findIndex(x => x.name == data)
     values.splice(index,1)
+    console.log(values);
     localStorage.setItem(localStorageKey, JSON.stringify(values))
+    let list = document.getElementById('list-item')
+    list.innerHTML = '';
     showValues()
 }
 
-showValues()
+function showValues()
+{
+    let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]")
+    console.log(values)
+    let list = document.getElementById('list-item')
+
+    values.forEach(element => {
+    
+            list.innerHTML += `<li>
+            ${element.name}<button listName='${element.name}' id='btn-del' onclick='removeItem("${element.name}")'>
+            <i class="ph ph-check"></i>
+            </button></li>`   
+    });
+}

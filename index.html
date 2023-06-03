@@ -9,18 +9,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Atendimento</title>
+    <title>ToDoKanban</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <h1>Lista de Atendimento</h1>
+    <h1>ToDoList with Kanban</h1>
     <div class="content">
         <div class="content-inputs">
-            <input type="text" id="input-text" placeholder="Digite o nome do paciente">
-            <button onclick="newTask()" id="input-btn" title="Adicione o novo paciente">
+            <input type="text" id="input-text" placeholder="Adiciona uma nova tarefa">
+            <button onclick="newTask()" id="input-btn" title="Adicione a tarefa">
                 <i class="ph ph-plus"></i>
+            </button>
+            <button onclick="newTask()" id="input-btn" title="Remova todos os itens">
+                <i class="ph ph-trash"></i>
             </button>
         </div>
         <div class="content-body">

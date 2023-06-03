@@ -90,7 +90,7 @@ cursor: pointer;
 
 .content-inputs button:hover {
 transition: 0.3s;
-background-color: var(--color-green-100);
+background-color: var(--color-white);
 color: var(--color-black);
 }
 
@@ -136,6 +136,6 @@ font-size: 1rem;
 
 #btn-del:hover {
   transition: 0.3s;
-  background-color: var(--color-red);
-  color: var(--color-black);
+  background-color: var(--color-green-100);
+  color: var(--color-white);
 }
