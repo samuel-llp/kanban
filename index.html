@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-
+<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -9,25 +8,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDoKanban</title>
+
+    <title>Kanban</title>
+
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="todo.js" defer></script>
+    <script src="drag.js" defer></script>
 </head>
 <body>
-    <h1>ToDoList with Kanban</h1>
-    <div class="content">
-        <div class="content-inputs">
-            <input type="text" id="input-text" placeholder="Adiciona uma nova tarefa">
-            <button onclick="newTask()" id="input-btn" title="Adicione a tarefa">
+    <h1>Kanban Project School</h1>
+    <div class="board">
+        <form id="todo-form">
+            <input id="todo-input" type="text" placeholder="Adicione uma nova tarefa">
+
+            <button type="submit">
                 <i class="ph ph-plus"></i>
             </button>
-            <button onclick="newTask()" id="input-btn" title="Remova todos os itens">
-                <i class="ph ph-trash"></i>
-            </button>
-        </div>
-        <div class="content-body">
-            <ul id="list-item"></ul>
+        </form>
+
+        <div class="lanes">
+            <div id="todo-lane" class="swim-lane">
+                <h3 class="title">TO DO</h3>
+
+            </div>
+
+            <div class="swim-lane">
+                <h3 class="title">DONE</h3>
+
+            </div>
         </div>
     </div>
 </body>
